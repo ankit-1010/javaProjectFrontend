@@ -1,0 +1,51 @@
+.admin-transactions-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.btn-export-csv {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  background: #2563EB;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 0.88rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.25);
+  transition: all 0.2s;
+}
+
+.btn-export-csv:hover {
+  background: #1D4ED8;
+  transform: translateY(-1px);
+}
+
+.tx-status-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.tx-status-pill.completed {
+  background: #ECFDF5;
+  color: #059669;
+}
+
+.tx-status-pill.pending {
+  background: #FFFBEB;
+  color: #D97706;
+}
+
+.tx-status-pill.failed {
+  background: #FEF2F2;
+  color: #DC2626;
+}

@@ -1,0 +1,237 @@
+.transactions-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.page-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-header-row h2 {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+
+.page-header-row p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.btn-add-tx-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.35rem;
+  background: #3B82F6;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.25);
+  transition: all 0.2s;
+}
+
+.btn-add-tx-primary:hover {
+  background: #2563EB;
+  transform: translateY(-1px);
+}
+
+.tx-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tx-tabs-group {
+  display: flex;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  padding: 0.25rem;
+  border-radius: 10px;
+}
+
+.tx-tab-btn {
+  padding: 0.45rem 1.15rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748B;
+  transition: all 0.2s;
+}
+
+.tx-tab-btn.active {
+  background: #2563EB;
+  color: #FFFFFF;
+}
+
+.tx-search-input-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  padding: 0.45rem 0.9rem;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 220px;
+}
+
+.tx-search-icon {
+  color: #94A3B8;
+}
+
+.tx-search-input-box input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-size: 0.85rem;
+  color: var(--text-main);
+}
+
+.tx-dropdown-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  padding: 0.45rem 0.85rem;
+  border-radius: 10px;
+  color: #64748B;
+}
+
+.tx-dropdown-pill select {
+  border: none;
+  background: transparent;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+}
+
+.tx-table-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  overflow-x: auto;
+}
+
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.transactions-table th {
+  padding: 1rem 1.25rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #64748B;
+  border-bottom: 1px solid var(--border-color);
+  background: #F8FAFC;
+}
+
+.transactions-table td {
+  padding: 1rem 1.25rem;
+  font-size: 0.88rem;
+  color: #334155;
+  border-bottom: 1px solid #F1F5F9;
+  vertical-align: middle;
+}
+
+.transactions-table tr:hover {
+  background: #F8FAFC;
+}
+
+.tx-date-cell {
+  color: #64748B;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.tx-desc-cell {
+  font-weight: 600;
+  color: #0F172A;
+}
+
+.tx-category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.tx-category-badge.salary { background: #ECFDF5; color: #059669; }
+.tx-category-badge.food { background: #FFFBEB; color: #D97706; }
+.tx-category-badge.transport { background: #EFF6FF; color: #2563EB; }
+.tx-category-badge.education { background: #F5F3FF; color: #7C3AED; }
+.tx-category-badge.freelance { background: #ECFEFF; color: #0891B2; }
+.tx-category-badge.bills { background: #FEF3C7; color: #B45309; }
+.tx-category-badge.shopping { background: #FDF2F8; color: #DB2777; }
+
+.tx-type-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+}
+
+.tx-type-badge.income {
+  background: #ECFDF5;
+  color: #059669;
+}
+
+.tx-type-badge.expense {
+  background: #FEF2F2;
+  color: #DC2626;
+}
+
+.tx-amount-cell {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.tx-amount-cell.income { color: #059669; }
+.tx-amount-cell.expense { color: #DC2626; }
+
+.tx-actions-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.action-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748B;
+  transition: all 0.2s;
+}
+
+.action-btn.view-btn:hover { background: #EFF6FF; color: #2563EB; }
+.action-btn.edit-btn:hover { background: #FEF3C7; color: #D97706; }
+.action-btn.delete-btn:hover { background: #FEF2F2; color: #DC2626; }
+
+.empty-table-cell {
+  text-align: center;
+  padding: 3rem !important;
+  color: #94A3B8;
+  font-style: italic;
+}

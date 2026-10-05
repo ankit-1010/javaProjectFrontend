@@ -1,0 +1,163 @@
+.goals-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  padding: 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.goals-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.goal-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.goal-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.goal-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.goal-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #EFF6FF;
+  color: #2563EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.goal-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.goal-amounts-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.goal-saved {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+.goal-target {
+  font-size: 0.88rem;
+  color: #94A3B8;
+  font-weight: 600;
+}
+
+.goal-progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.goal-progress-track {
+  flex: 1;
+  height: 8px;
+  background: #F1F5F9;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.goal-progress-bar {
+  height: 100%;
+  background: #2563EB;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.goal-percent-text {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #64748B;
+  min-width: 32px;
+}
+
+.goal-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.35rem;
+  border-top: 1px solid #F1F5F9;
+}
+
+.goal-target-date {
+  font-size: 0.78rem;
+  color: #64748B;
+  font-weight: 500;
+}
+
+.btn-add-funds {
+  padding: 0.35rem 0.75rem;
+  background: #EFF6FF;
+  color: #2563EB;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.btn-add-funds:hover {
+  background: #2563EB;
+  color: #FFFFFF;
+}
+
+/* Savings progress card */
+.savings-progress-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.savings-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.savings-card-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.savings-chart-body {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .goals-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

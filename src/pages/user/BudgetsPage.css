@@ -1,0 +1,138 @@
+.budgets-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  padding: 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.budgets-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.budget-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.budget-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.budget-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.budget-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.budget-icon-circle.food-icon { background: #FEF2F2; color: #EF4444; }
+.budget-icon-circle.transport-icon { background: #EFF6FF; color: #2563EB; }
+.budget-icon-circle.shopping-icon { background: #FDF2F8; color: #DB2777; }
+.budget-icon-circle.bills-icon { background: #FEF3C7; color: #D97706; }
+.budget-icon-circle.education-icon { background: #ECFDF5; color: #059669; }
+.budget-icon-circle.others-icon { background: #F1F5F9; color: #64748B; }
+
+.budget-dots-btn {
+  color: #94A3B8;
+  padding: 0.25rem;
+  border-radius: 6px;
+}
+
+.budget-dots-btn:hover {
+  background: #F1F5F9;
+  color: #334155;
+}
+
+.budget-category-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.budget-amounts-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.budget-spent {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: -0.3px;
+}
+
+.budget-allocated {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #94A3B8;
+}
+
+.budget-progress-track {
+  width: 100%;
+  height: 8px;
+  background: #F1F5F9;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 0.25rem;
+}
+
+.budget-progress-fill {
+  height: 100%;
+  background: #2563EB;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.budget-progress-fill.danger {
+  background: #EF4444;
+}
+
+.budget-footer-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: #64748B;
+  font-weight: 600;
+}
+
+.budget-warning-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #D97706;
+}
+
+@media (max-width: 900px) {
+  .budgets-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .budgets-grid {
+    grid-template-columns: 1fr;
+  }
+}
