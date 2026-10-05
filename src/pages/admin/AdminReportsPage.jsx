@@ -19,7 +19,7 @@ import {
 import './AdminReportsPage.css';
 
 export const AdminReportsPage = () => {
-  const [dateRange, setDateRange] = useState('Jan 1, 2024 - Dec 31, 2024');
+  const [dateRange, setDateRange] = useState('This Year');
   const [stats, setStats] = useState(null);
   const [categories, setCategories] = useState([]);
 

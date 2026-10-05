@@ -60,7 +60,7 @@ export const DashboardPage = () => {
       <div className="dashboard-welcome-header">
         <div className="welcome-text-group">
           <h1>Welcome back, {userName}! 👋</h1>
-          <p>Here is your real-time financial overview powered by Aiven MySQL.</p>
+          <p>Here is your real-time financial </p>
         </div>
 
         <div className="date-selector-pill">

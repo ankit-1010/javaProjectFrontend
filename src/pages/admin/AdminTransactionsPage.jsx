@@ -21,7 +21,7 @@ export const AdminTransactionsPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [typeFilter, setTypeFilter] = useState('All');
   const [categoryFilter, setCategoryFilter] = useState('All');
-  const [dateRange, setDateRange] = useState('Jan 1, 2024 - Dec 31, 2024');
+  const [dateRange, setDateRange] = useState('This Year');
 
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);

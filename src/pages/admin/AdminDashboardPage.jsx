@@ -16,7 +16,7 @@ import './AdminDashboardPage.css';
 export const AdminDashboardPage = () => {
   const navigate = useNavigate();
   const [stats, setStats] = useState(null);
-  const [dateRange, setDateRange] = useState('Jan 1, 2024 - Dec 31, 2024');
+  const [dateRange, setDateRange] = useState('This Year');
 
   useEffect(() => {
     loadAdminStats();

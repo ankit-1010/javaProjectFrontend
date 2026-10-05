@@ -9,7 +9,7 @@ import './ReportsPage.css';
 export const ReportsPage = () => {
   const { currentUser } = useAuth();
   const [activeTab, setActiveTab] = useState('Overview');
-  const [selectedMonth, setSelectedMonth] = useState('September 2026');
+  const [selectedMonth, setSelectedMonth] = useState('This Year');
   const [transactions, setTransactions] = useState([]);
 
   useEffect(() => {
@@ -45,8 +45,7 @@ export const ReportsPage = () => {
         <div className="tx-dropdown-pill">
           <Calendar size={15} />
           <select value={selectedMonth} onChange={e => setSelectedMonth(e.target.value)}>
-            <option value="September 2026">September 2026</option>
-            <option value="August 2026">August 2026</option>
+            
           </select>
         </div>
       </div>
