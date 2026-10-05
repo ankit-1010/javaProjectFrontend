@@ -284,8 +284,8 @@ export const AdminTransactionsPage = () => {
 
       {/* View Modal */}
       {viewTx && (
-        <div className="modal-backdrop">
-          <div className="modal-content" style={{ maxWidth: '420px', background: '#FFFFFF', borderRadius: '12px', padding: '1.5rem', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}>
+        <div className="modal-backdrop" onClick={() => setViewTx(null)}>
+          <div className="modal-content" onClick={e => e.stopPropagation()} style={{ maxWidth: 'min(420px, calc(100% - 24px))', maxHeight: 'calc(100vh - 32px)', overflowY: 'auto', background: '#FFFFFF', borderRadius: '12px', padding: '1.5rem', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
               <h3 style={{ margin: 0, fontSize: '1.15rem', fontWeight: 600 }}>Transaction Details</h3>
               <button onClick={() => setViewTx(null)} style={{ background: 'none', border: 'none', cursor: 'pointer' }}><X size={18} /></button>
@@ -307,8 +307,8 @@ export const AdminTransactionsPage = () => {
 
       {/* Edit Modal */}
       {editTx && (
-        <div className="modal-backdrop">
-          <div className="modal-content" style={{ maxWidth: '450px', background: '#FFFFFF', borderRadius: '12px', padding: '1.5rem', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}>
+        <div className="modal-backdrop" onClick={() => setEditTx(null)}>
+          <div className="modal-content" onClick={e => e.stopPropagation()} style={{ maxWidth: 'min(450px, calc(100% - 24px))', maxHeight: 'calc(100vh - 32px)', overflowY: 'auto', background: '#FFFFFF', borderRadius: '12px', padding: '1.5rem', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
               <h3 style={{ margin: 0, fontSize: '1.15rem', fontWeight: 600 }}>Edit Transaction</h3>
               <button onClick={() => setEditTx(null)} style={{ background: 'none', border: 'none', cursor: 'pointer' }}><X size={18} /></button>

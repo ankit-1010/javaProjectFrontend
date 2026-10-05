@@ -55,15 +55,15 @@ export const AddUserModal = ({ isOpen, onClose, onAdd }) => {
             <label className="form-label">Phone Number</label>
             <input type="text" placeholder="e.g. +91 9876543210" className="form-input" value={phone} onChange={e => setPhone(e.target.value)} />
           </div>
-          <div style={{ display: 'flex', gap: '1rem' }}>
-            <div className="form-group" style={{ flex: 1 }}>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+            <div className="form-group" style={{ flex: 1, minWidth: '120px' }}>
               <label className="form-label">Role</label>
               <select className="form-select" value={role} onChange={e => setRole(e.target.value)}>
                 <option value="USER">User</option>
                 <option value="ADMIN">Admin</option>
               </select>
             </div>
-            <div className="form-group" style={{ flex: 1 }}>
+            <div className="form-group" style={{ flex: 1, minWidth: '120px' }}>
               <label className="form-label">Status</label>
               <select className="form-select" value={status} onChange={e => setStatus(e.target.value)}>
                 <option value="Active">Active</option>

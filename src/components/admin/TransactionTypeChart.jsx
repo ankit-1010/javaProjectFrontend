@@ -15,8 +15,8 @@ export const TransactionTypeChart = ({ totalIncome = 0, totalExpenses = 0 }) => 
   const expenseLen = (sum > 0 ? expenseRatio : 0) * circumference;
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', width: '100%' }}>
-      <div style={{ position: 'relative', width: '130px', height: '130px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <div className="admin-donut-chart-container" style={{ width: '100%' }}>
+      <div style={{ position: 'relative', width: '130px', height: '130px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
         <svg width="130" height="130" viewBox="0 0 130 130" style={{ transform: 'rotate(-90deg)' }}>
           {sum === 0 ? (
             <circle

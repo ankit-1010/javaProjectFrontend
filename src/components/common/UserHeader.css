@@ -9,6 +9,31 @@
   position: sticky;
   top: 0;
   z-index: 40;
+  width: 100%;
+}
+
+.header-left-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.mobile-header-hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  color: #334155;
+  background: #F8FAFC;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s;
+}
+
+.mobile-header-hamburger:hover {
+  background: #EFF6FF;
+  color: #2563EB;
 }
 
 .header-search-bar {
@@ -190,4 +215,44 @@
 
 .user-chevron {
   color: #94A3B8;
+}
+
+@media (max-width: 767px) {
+  .user-top-header {
+    height: 60px;
+    padding: 0 0.85rem;
+    gap: 0.5rem;
+  }
+
+  .mobile-header-hamburger {
+    display: flex;
+  }
+
+  .header-search-bar {
+    width: 140px;
+    padding: 0.45rem 0.75rem;
+  }
+
+  .header-search-input {
+    font-size: 0.82rem;
+  }
+
+  .header-right-actions {
+    gap: 0.65rem;
+  }
+
+  .user-display-role {
+    display: none;
+  }
+
+  .user-avatar-pill {
+    padding: 0.25rem 0.4rem;
+    gap: 0.45rem;
+  }
+
+  .notifications-popover {
+    width: calc(100vw - 24px);
+    max-width: 320px;
+    right: -50px;
+  }
 }

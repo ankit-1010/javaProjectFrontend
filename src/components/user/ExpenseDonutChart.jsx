@@ -53,7 +53,7 @@ export const ExpenseDonutChart = ({ transactions = [] }) => {
   }
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1.5rem', width: '100%', height: '100%' }}>
+    <div className="expense-donut-chart-container" style={{ width: '100%', height: '100%' }}>
       {/* Donut Graphic */}
       <div style={{ position: 'relative', width: '170px', height: '170px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
         <svg width="170" height="170" viewBox="0 0 170 170" style={{ transform: 'rotate(-90deg)' }}>

@@ -314,11 +314,45 @@
   color: #2563EB;
 }
 
+@media (max-width: 1023px) {
+  .auth-card-wrapper {
+    max-width: 760px;
+  }
+}
+
 @media (max-width: 820px) {
   .auth-card-wrapper {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
   .auth-banner-col {
     display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .auth-page-container {
+    padding: 3.5rem 1rem 1.5rem 1rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .auth-back-btn {
+    top: 0.75rem;
+    left: 0.75rem;
+  }
+
+  .auth-card-wrapper {
+    border-radius: 16px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .auth-form-col {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .auth-form-header h2 {
+    font-size: 1.35rem;
   }
 }

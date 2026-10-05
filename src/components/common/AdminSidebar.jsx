@@ -8,11 +8,12 @@ import {
   Layers, 
   BarChart2, 
   Settings, 
-  LogOut
+  LogOut,
+  X
 } from 'lucide-react';
 import './AdminSidebar.css';
 
-export const AdminSidebar = () => {
+export const AdminSidebar = ({ isOpen = false, onClose }) => {
   const { logout, currentUser } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -26,9 +27,15 @@ export const AdminSidebar = () => {
     { path: '/admin/settings', label: 'Settings', icon: Settings }
   ];
 
+  const handleNavClick = (path) => {
+    navigate(path);
+    if (onClose) onClose();
+  };
+
   const handleLogout = () => {
     logout();
     navigate('/admin-login');
+    if (onClose) onClose();
   };
 
   const adminName = currentUser?.fullName || 'Admin';
@@ -36,19 +43,30 @@ export const AdminSidebar = () => {
   const adminInitial = currentUser?.avatar || adminName.charAt(0).toUpperCase() || 'A';
 
   return (
-    <aside className="admin-sidebar">
+    <aside className={`admin-sidebar ${isOpen ? 'open' : ''}`}>
       {/* Brand */}
-      <div className="admin-brand" onClick={() => navigate('/admin/dashboard')} style={{ cursor: 'pointer' }}>
-        <div className="admin-logo-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-            <rect x="2" y="4" width="20" height="16" rx="4" fill="#3B82F6" />
-            <path d="M7 15V9L12 13L17 9V15" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+      <div className="admin-brand-row">
+        <div className="admin-brand" onClick={() => handleNavClick('/admin/dashboard')} style={{ cursor: 'pointer' }}>
+          <div className="admin-logo-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="4" width="20" height="16" rx="4" fill="#3B82F6" />
+              <path d="M7 15V9L12 13L17 9V15" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+          <div className="admin-brand-info">
+            <span className="brand-name">MapFinance</span>
+            <span className="admin-tag">ADMIN</span>
+          </div>
         </div>
-        <div className="admin-brand-info">
-          <span className="brand-name">MapFinance</span>
-          <span className="admin-tag">ADMIN</span>
-        </div>
+
+        {/* Mobile Close Button */}
+        <button 
+          className="admin-mobile-close-btn" 
+          onClick={onClose} 
+          aria-label="Close menu"
+        >
+          <X size={20} />
+        </button>
       </div>
 
       {/* Nav Menu */}
@@ -60,7 +78,7 @@ export const AdminSidebar = () => {
             <button
               key={item.path}
               className={`admin-nav-item ${isActive ? 'active' : ''}`}
-              onClick={() => navigate(item.path)}
+              onClick={() => handleNavClick(item.path)}
             >
               <Icon size={19} className="nav-item-icon" />
               <span className="nav-item-label">{item.label}</span>
@@ -71,7 +89,7 @@ export const AdminSidebar = () => {
 
       {/* Admin Profile */}
       <div className="admin-sidebar-footer">
-        <div className="admin-user-card" onClick={() => navigate('/admin/settings')} style={{ cursor: 'pointer' }}>
+        <div className="admin-user-card" onClick={() => handleNavClick('/admin/settings')} style={{ cursor: 'pointer' }}>
           <div className="admin-user-avatar">{adminInitial}</div>
           <div className="admin-user-details">
             <span className="admin-user-name">{adminName}</span>

@@ -36,8 +36,8 @@ export const MonthlyExpensesTrendChart = ({ transactions = [] }) => {
   }, '');
 
   return (
-    <div style={{ width: '100%', overflowX: 'auto' }}>
-      <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} style={{ width: '100%', height: 'auto', minWidth: '400px' }}>
+    <div style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden' }}>
+      <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} style={{ width: '100%', height: 'auto', display: 'block' }}>
         {/* Y Grid lines */}
         {[
           { label: `₹${Math.round(maxVal).toLocaleString('en-IN')}`, ratio: 1.0 },

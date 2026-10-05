@@ -235,3 +235,72 @@
   color: #94A3B8;
   font-style: italic;
 }
+
+@media (max-width: 1023px) {
+  .transactions-page-wrapper {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .transactions-page-wrapper {
+    padding: 1rem;
+    gap: 1.25rem;
+  }
+
+  .page-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .page-header-row h2 {
+    font-size: 1.35rem;
+  }
+
+  .btn-add-tx-primary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tx-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .tx-tabs-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .tx-tab-btn {
+    flex: 1;
+    text-align: center;
+    padding: 0.45rem 0.5rem;
+  }
+
+  .tx-search-input-box {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .tx-dropdown-pill {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .tx-dropdown-pill select {
+    width: 100%;
+  }
+
+  .transactions-table {
+    min-width: 650px;
+  }
+
+  .transactions-table th,
+  .transactions-table td {
+    padding: 0.75rem 0.85rem;
+  }
+}

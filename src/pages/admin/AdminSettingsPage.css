@@ -155,8 +155,65 @@
   transform: translateY(-1px);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1023px) {
+  .admin-settings-wrapper {
+    padding: 1.5rem;
+  }
   .password-inputs-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .admin-settings-wrapper {
+    padding: 1rem;
+    gap: 1.25rem;
+  }
+
+  .admin-settings-tabs {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .admin-setting-tab {
+    white-space: nowrap;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.82rem;
+  }
+
+  .admin-settings-card {
+    padding: 1.25rem;
+  }
+
+  .admin-photo-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .photo-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .admin-form-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .password-inputs-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .admin-form-submit-row {
+    justify-content: stretch;
+  }
+
+  .btn-save-admin-changes {
+    width: 100%;
+    justify-content: center;
   }
 }

@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, Navigate, Outlet, useLocation } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { UserSidebar } from './components/common/UserSidebar';
 import { AdminSidebar } from './components/common/AdminSidebar';
@@ -32,6 +32,12 @@ import './App.css';
 // Protected Layout for User Pages
 const UserLayout = () => {
   const { isAuthenticated } = useAuth();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setSidebarOpen(false);
+  }, [location.pathname]);
 
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
@@ -39,9 +45,16 @@ const UserLayout = () => {
 
   return (
     <div className="dashboard-app-layout">
-      <UserSidebar />
+      <UserSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+      {sidebarOpen && (
+        <div 
+          className="sidebar-backdrop-overlay" 
+          onClick={() => setSidebarOpen(false)}
+          aria-label="Close sidebar overlay"
+        />
+      )}
       <div className="dashboard-main-area">
-        <UserHeader />
+        <UserHeader onToggleSidebar={() => setSidebarOpen(prev => !prev)} />
         <main className="dashboard-view-body">
           <Outlet />
         </main>
@@ -53,6 +66,12 @@ const UserLayout = () => {
 // Protected Layout for Admin Pages
 const AdminLayout = () => {
   const { isAuthenticated, isAdmin } = useAuth();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setSidebarOpen(false);
+  }, [location.pathname]);
 
   if (!isAuthenticated) {
     return <Navigate to="/admin-login" replace />;
@@ -65,9 +84,16 @@ const AdminLayout = () => {
 
   return (
     <div className="dashboard-app-layout admin-mode">
-      <AdminSidebar />
+      <AdminSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+      {sidebarOpen && (
+        <div 
+          className="sidebar-backdrop-overlay" 
+          onClick={() => setSidebarOpen(false)}
+          aria-label="Close sidebar overlay"
+        />
+      )}
       <div className="dashboard-main-area">
-        <AdminHeader />
+        <AdminHeader onToggleSidebar={() => setSidebarOpen(prev => !prev)} />
         <main className="dashboard-view-body">
           <Outlet />
         </main>

@@ -38,8 +38,8 @@ export const SavingsProgressChart = ({ goals = [] }) => {
   const areaD = `${pathD} L ${coords[coords.length - 1].x},${chartH} L ${coords[0].x},${chartH} Z`;
 
   return (
-    <div style={{ width: '100%', overflowX: 'auto' }}>
-      <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} style={{ width: '100%', height: 'auto', minWidth: '450px' }}>
+    <div style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden' }}>
+      <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} style={{ width: '100%', height: 'auto', display: 'block' }}>
         <defs>
           <linearGradient id="savingsGrad" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#4F46E5" stopOpacity="0.25" />

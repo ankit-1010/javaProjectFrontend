@@ -8,11 +8,12 @@ import {
   Target, 
   BarChart2, 
   User, 
-  LogOut
+  LogOut,
+  X
 } from 'lucide-react';
 import './UserSidebar.css';
 
-export const UserSidebar = () => {
+export const UserSidebar = ({ isOpen = false, onClose }) => {
   const { logout } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -26,22 +27,39 @@ export const UserSidebar = () => {
     { path: '/profile', label: 'Profile', icon: User }
   ];
 
+  const handleNavClick = (path) => {
+    navigate(path);
+    if (onClose) onClose();
+  };
+
   const handleLogout = () => {
     logout();
     navigate('/login');
+    if (onClose) onClose();
   };
 
   return (
-    <aside className="user-sidebar">
-      {/* Brand */}
-      <div className="sidebar-brand" onClick={() => navigate('/dashboard')} style={{ cursor: 'pointer' }}>
-        <div className="brand-logo-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-            <rect x="2" y="4" width="20" height="16" rx="4" fill="#3B82F6" />
-            <path d="M7 15V9L12 13L17 9V15" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+    <aside className={`user-sidebar ${isOpen ? 'open' : ''}`}>
+      {/* Brand Header */}
+      <div className="sidebar-brand-row">
+        <div className="sidebar-brand" onClick={() => handleNavClick('/dashboard')} style={{ cursor: 'pointer' }}>
+          <div className="brand-logo-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="4" width="20" height="16" rx="4" fill="#3B82F6" />
+              <path d="M7 15V9L12 13L17 9V15" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+          <span className="brand-name">MapFinance</span>
         </div>
-        <span className="brand-name">MapFinance</span>
+
+        {/* Mobile close button */}
+        <button 
+          className="sidebar-mobile-close-btn" 
+          onClick={onClose} 
+          aria-label="Close menu"
+        >
+          <X size={20} />
+        </button>
       </div>
 
       {/* Nav Menu */}
@@ -53,7 +71,7 @@ export const UserSidebar = () => {
             <button
               key={item.path}
               className={`sidebar-nav-item ${isActive ? 'active' : ''}`}
-              onClick={() => navigate(item.path)}
+              onClick={() => handleNavClick(item.path)}
             >
               <Icon size={19} className="nav-item-icon" />
               <span className="nav-item-label">{item.label}</span>

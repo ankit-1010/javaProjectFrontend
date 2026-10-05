@@ -38,7 +38,7 @@ export const AdminDualLineChart = ({ totalIncome = 0, totalExpenses = 0 }) => {
   const expPath = expCoords.reduce((acc, pt, i) => i === 0 ? `M ${pt.x},${pt.y}` : `${acc} L ${pt.x},${pt.y}`, '');
 
   return (
-    <div style={{ width: '100%' }}>
+    <div style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden' }}>
       {/* Legend */}
       <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '1.25rem', marginBottom: '0.75rem', fontSize: '0.75rem', fontWeight: 600 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
@@ -51,7 +51,7 @@ export const AdminDualLineChart = ({ totalIncome = 0, totalExpenses = 0 }) => {
         </div>
       </div>
 
-      <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} style={{ width: '100%', height: 'auto', minWidth: '420px' }}>
+      <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} style={{ width: '100%', height: 'auto', display: 'block' }}>
         {/* Y Grid */}
         {[
           { label: `₹${Math.round(maxVal).toLocaleString('en-IN')}`, ratio: 1.0 },

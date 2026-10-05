@@ -49,3 +49,21 @@
   background: #FEF2F2;
   color: #DC2626;
 }
+
+@media (max-width: 1023px) {
+  .admin-transactions-wrapper {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .admin-transactions-wrapper {
+    padding: 1rem;
+    gap: 1.25rem;
+  }
+
+  .btn-export-csv {
+    width: 100%;
+    justify-content: center;
+  }
+}

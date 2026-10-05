@@ -57,14 +57,14 @@ export const IncomeExpenseBarChart = ({ transactions = [] }) => {
             '₹0'
           ].map((label, idx) => (
             <div key={idx} style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
-              <span style={{ fontSize: '0.65rem', color: '#94A3B8', width: '50px' }}>{label}</span>
+              <span style={{ fontSize: '0.62rem', color: '#94A3B8', width: '42px', flexShrink: 0 }}>{label}</span>
               <div style={{ flex: 1, borderTop: '1px dashed #F1F5F9' }} />
             </div>
           ))}
         </div>
 
         {/* Bars Container */}
-        <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'flex-end', width: '100%', height: '100%', paddingLeft: '55px', zIndex: 1 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'flex-end', width: '100%', height: '100%', paddingLeft: '45px', zIndex: 1 }}>
           {data.map((item, idx) => {
             const incomeHeight = item.income > 0 ? Math.max(6, (item.income / maxVal) * (chartHeight - 35)) : 0;
             const expenseHeight = item.expense > 0 ? Math.max(6, (item.expense / maxVal) * (chartHeight - 35)) : 0;

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { Search, Bell, ChevronDown } from 'lucide-react';
+import { Search, Bell, ChevronDown, Menu } from 'lucide-react';
 import './UserHeader.css';
 
-export const UserHeader = () => {
+export const UserHeader = ({ onToggleSidebar }) => {
   const { currentUser, notifications } = useAuth();
   const navigate = useNavigate();
   const [showNotifications, setShowNotifications] = useState(false);
@@ -14,14 +14,26 @@ export const UserHeader = () => {
 
   return (
     <header className="user-top-header">
-      {/* Search Input */}
-      <div className="header-search-bar">
-        <Search size={18} className="search-icon" />
-        <input 
-          type="text" 
-          placeholder="Search..." 
-          className="header-search-input"
-        />
+      <div className="header-left-group">
+        {/* Mobile Hamburger Button */}
+        <button 
+          className="mobile-header-hamburger" 
+          onClick={onToggleSidebar}
+          aria-label="Open sidebar menu"
+          title="Open menu"
+        >
+          <Menu size={22} />
+        </button>
+
+        {/* Search Input */}
+        <div className="header-search-bar">
+          <Search size={18} className="search-icon" />
+          <input 
+            type="text" 
+            placeholder="Search..." 
+            className="header-search-input"
+          />
+        </div>
       </div>
 
       {/* Right controls */}
